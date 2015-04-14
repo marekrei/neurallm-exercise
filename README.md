@@ -32,6 +32,12 @@ In order to run the training and scoring, run
 
 The system will train on the **trainingdata**, testing on the **devdata** every 4000 lines by default. If the performance has not improved, the learning rate will be decreased at every epoch. When there is again no improvement, the training will stop.
 
+There are some settings in the beginning of LM.java that you can change if you wish.
+
+This implementation is not the most optimal way of implementing neural language models. Many advanced techniques exist for speeding up such models, and you are encouraged to find out about them if you are interested. This code is kept simple and minimal to introduce the concepts of neural language modelling and parameter training through backpropagation.
+
+
+
 JBlas
 -----------------------------------------
 
