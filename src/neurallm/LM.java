@@ -134,7 +134,7 @@ public class LM {
 		double logp = 0.0;
 		int wordCount = 0;
 		int lineCount = 0;
-		double logpDevOld = -Double.MAX_VALUE;
+		double pplDevOld = Double.MAX_VALUE;
 		int epoch = 0;
 		
 		if(alpha > 0.0)
@@ -171,9 +171,8 @@ public class LM {
 					
 					double pplDev = processFile(devFile, null, 0.0);
 					System.out.println("PPL_dev: " + pplDev);
-
-					double logpDev = Math.pow(10.0, pplDev) * -1.0;
-					if (logpDev * 1.003 < logpDevOld) {
+					
+					if (-1.0 * Math.log10(pplDev) * 1.003 < -1.0 * Math.log10(pplDevOld)) {
 						if (!this.alphaDivide)
 							this.alphaDivide = true;
 						else
@@ -181,7 +180,7 @@ public class LM {
 					}
 					if (this.alphaDivide)
 						alpha /= 2.0;
-					logpDevOld = logpDev;
+					pplDevOld = pplDev;
 
 					System.out.println("Epoch " + (++epoch) + " ( alpha = " + alpha + ")");
 				}
