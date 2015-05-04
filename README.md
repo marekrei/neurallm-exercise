@@ -18,6 +18,14 @@ Do not put your code publically online before the end of the homework deadline.
 Running the system
 -----------------------------------------
 
+First you'll need to compile the Java code. This process will depend on your operating system, but on Linux/Mac this command should work:
+
+        javac -d bin -sourcepath src -cp lib/* src/neurallm/Network.java
+
+Or you can install and use eclipse, which will handle linking and compiling
+
+        [https://www.eclipse.org](https://www.eclipse.org)
+
 I have implemented the gradient check, as described in the lectures, to test your code. You can run
 
 	java -cp bin:lib/* neurallm.Network
