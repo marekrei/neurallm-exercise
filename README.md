@@ -20,7 +20,7 @@ Running the system
 
 First you'll need to compile the Java code. This process will depend on your operating system, but on Linux/Mac this command should work:
 
-        javac -d bin -sourcepath src -cp lib/* src/neurallm/Network.java
+        javac -d bin -sourcepath src -cp lib/* src/neurallm/*
 
 Or you can install and use eclipse, which will handle linking and compiling
 
